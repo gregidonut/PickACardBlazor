@@ -15,7 +15,10 @@
                 <div class="col-2">@numberOfCards</div>
             </div>
             <div>
-                <button type="button" class="btn btn-primary">Pick some cards</button>
+                <button type="button" class="btn btn-primary"
+                        @onclick="() => { pickedCards = CardPicker.PickSomeCards(numberOfCards); }">
+                    Pick some cards
+                </button>
             </div>
         </div>
         <div class="col-4">
@@ -33,5 +36,5 @@
 @code
 {
     static int numberOfCards = 5;
-    private readonly string[] pickedCards = CardPicker.PickSomeCards(numberOfCards);
+    private string[] pickedCards = CardPicker.PickSomeCards(numberOfCards);
 }
