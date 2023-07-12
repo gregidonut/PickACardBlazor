@@ -17,6 +17,12 @@
         </div>
         <div class="col-4"> @* right column *@
             list of cards (placeholder)
+            <ul class="list-group">
+                @foreach (var card in pickedCards)
+                {
+                    <li class="list-group-item">@card</li>
+                }
+            </ul>
         </div>
     </div>
 </div>
