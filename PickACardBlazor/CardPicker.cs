@@ -7,7 +7,16 @@ public class CardPicker
         var pickedCards = new string[numberOfCards];
 
         for (var i = 0; i < numberOfCards; i++)
-            pickedCards[i] = RandomValue() + " of " + RandomSuit();
+            // before adding the new card to array,
+            // check if the array already contains the card,
+            // in which case pick another random card
+            while (true)
+            {
+                var randCard = RandomValue() + " of " + RandomSuit();
+                if (pickedCards.Contains(randCard)) continue;
+                pickedCards[i] = randCard;
+                break;
+            }
 
         return pickedCards;
     }
