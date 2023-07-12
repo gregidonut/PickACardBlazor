@@ -1,4 +1,4 @@
-namespace PickRandomCards;
+namespace PickACardBlazor;
 
 public class CardPicker
 {
