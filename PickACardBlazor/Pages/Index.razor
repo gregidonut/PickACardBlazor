@@ -11,12 +11,12 @@
             </div>
             <div class="row mt-5">
                 <input type="range" class="col-10 form-control-range"
-                       min="1" max="15" @bind="numberOfCards">
-                <div class="col-2">@numberOfCards</div>
+                       min="1" max="15" @bind="_numberOfCards">
+                <div class="col-2">@_numberOfCards</div>
             </div>
             <div>
                 <button type="button" class="btn btn-primary"
-                        @onclick="() => { pickedCards = CardPicker.PickSomeCards(numberOfCards); }">
+                        @onclick="() => { _pickedCards = CardPicker.PickSomeCards(_numberOfCards); }">
                     Pick some cards
                 </button>
             </div>
@@ -24,7 +24,7 @@
         <div class="col-4">
             @* left column *@
             <ul class="list-group">
-                @foreach (var card in pickedCards)
+                @foreach (var card in _pickedCards)
                 {
                     <li class="list-group-item">@card</li>
                 }
@@ -35,6 +35,6 @@
 
 @code
 {
-    static int numberOfCards = 5;
-    private string[] pickedCards = CardPicker.PickSomeCards(numberOfCards);
+    static int _numberOfCards = 5;
+    private string[] _pickedCards = CardPicker.PickSomeCards(_numberOfCards);
 }
