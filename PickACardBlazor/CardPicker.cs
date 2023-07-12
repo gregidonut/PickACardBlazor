@@ -4,6 +4,8 @@ public class CardPicker
 {
     public static string[] PickSomeCards(int numberOfCards)
     {
+        if (numberOfCards is > 52 or < 1) throw new ArgumentOutOfRangeException();
+
         var pickedCards = new string[numberOfCards];
 
         for (var i = 0; i < numberOfCards; i++)
@@ -46,7 +48,7 @@ public class CardPicker
             "King"
         };
 
-        for (var i = 2; i < 9; i++) values.Add(i.ToString());
+        for (var i = 2; i <= 10; i++) values.Add(i.ToString());
 
         var rnd = new Random();
 
