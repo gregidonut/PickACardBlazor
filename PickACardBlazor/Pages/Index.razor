@@ -30,5 +30,6 @@
 
 @code
 {
-    private readonly string[] pickedCards = CardPicker.PickSomeCards(3);
+    static readonly int numberOfCards = 5;
+    private readonly string[] pickedCards = CardPicker.PickSomeCards(numberOfCards);
 }
